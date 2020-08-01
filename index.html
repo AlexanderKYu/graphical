@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link rel="stylesheet" type = "text/css" href="main.css">
+        
+        <title>
+            Calculator
+        </title>
+    </head>
+
+    <body>
+        <div class="inputs">
+            Enter the scope of the grid <br>
+            Maximum X value: <input type="text" id="maxX" value="10">
+            Minimum X value: <input type="text" id="minX" value="-10">
+            Maximun Y value: <input type="text" id="maxY" value="10">
+            Minimun Y value: <input type="text" id="minY" value="-10"> <br>
+            Enter the function: <input type="text" id="fun" value="y = x">
+            <button id="refresh" type="button">Refresh</button>
+        </div>
+        
+
+        <div class="graph">
+            <canvas width="810" height="810" id="myCanvas"></canvas>
+
+        </div>
+        
+    </body>
+
+    <script src = "./main.js"></script>
+</html>
+

@@ -1,0 +1,18 @@
+.inputs{
+
+    line-height: 26pt;
+    text-align: center;
+    font-size: large;
+
+    margin: 15px;
+}
+
+.graph{
+    margin: auto;
+    text-align: center;
+
+    border-style: solid;
+    border-radius: 15px;
+    width: 810px;
+    height: 810px;
+}
