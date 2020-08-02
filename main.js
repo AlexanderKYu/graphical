@@ -9,10 +9,10 @@ function refresh(){
     var ctx = canvas.getContext('2d');
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var maxX = document.getElementById("maxX").value;
-    var minX = document.getElementById("minX").value;
-    var maxY = document.getElementById("maxY").value;
-    var minY = document.getElementById("minY").value;
+    var maxX = parseInt(document.getElementById("maxX").value, 10);
+    var minX = parseInt(document.getElementById("minX").value, 10);
+    var maxY = parseInt(document.getElementById("maxY").value, 10);
+    var minY = parseInt(document.getElementById("minY").value, 10);
     var totalX = Math.abs(maxX) + Math.abs(minX);
     var totalY = Math.abs(maxY) + Math.abs(minY);
 
@@ -22,12 +22,12 @@ function refresh(){
 
     function axies(){
         
-        pxPerPointX = 800 / totalX;
-        pxPerPointY = 800 / totalY;
+        var pxPerPointX = 800 / totalX;
+        var pxPerPointY = 800 / totalY;
 
         var i;
 
-        if(maxX > 0 && minX < 0 && maxY > 0 && minY <0){
+        if(maxX >= 0 && minX <= 0 && maxY >= 0 && minY <= 0){
             
             ctx.beginPath();
 
@@ -35,8 +35,8 @@ function refresh(){
             // keep in mind offset of 5
 
             ctx.moveTo(5, pxPerPointY * maxY + 5);
-            ctx.lineTo(5, pxPerPointY * maxY + 2 + 5);
-            ctx.lineTo(5, pxPerPointY * maxY - 2 + 5);
+            ctx.lineTo(5, pxPerPointY * maxY + 3 + 5);
+            ctx.lineTo(5, pxPerPointY * maxY - 3 + 5);
             ctx.moveTo(5, pxPerPointY * maxY + 5);
             
 
@@ -48,8 +48,8 @@ function refresh(){
                 
                 ctx.lineTo(currentX, currentY);
                 ctx.moveTo(currentX, currentY);
-                ctx.lineTo(currentX, currentY + 2);
-                ctx.lineTo(currentX, currentY - 2);
+                ctx.lineTo(currentX, currentY + 3);
+                ctx.lineTo(currentX, currentY - 3);
                 ctx.moveTo(currentX, currentY);
                 
                 currentX += pxPerPointX;
@@ -57,8 +57,8 @@ function refresh(){
 
 
             ctx.moveTo(pxPerPointX * Math.abs(minX) + 5, 5);
-            ctx.lineTo(pxPerPointX * Math.abs(minX) + 5 + 2, 5);
-            ctx.lineTo(pxPerPointX * Math.abs(minX) + 5 - 2, 5);
+            ctx.lineTo(pxPerPointX * Math.abs(minX) + 5 + 3, 5);
+            ctx.lineTo(pxPerPointX * Math.abs(minX) + 5 - 3, 5);
             ctx.moveTo(pxPerPointX * Math.abs(minX) + 5, 5);
 
             currentX = pxPerPointX * Math.abs(minX) + 5;
@@ -69,15 +69,76 @@ function refresh(){
                 
                 ctx.lineTo(currentX, currentY);
                 ctx.moveTo(currentX, currentY);
-                ctx.lineTo(currentX + 2, currentY);
-                ctx.lineTo(currentX - 2, currentY);
+                ctx.lineTo(currentX + 3, currentY);
+                ctx.lineTo(currentX - 3, currentY);
                 ctx.moveTo(currentX, currentY);
                 
                 currentY += pxPerPointY;
             }
 
+            ctx.stroke();
+
+        }else if((maxX < 0 && minX < 0) || (maxX > 0 && minX > 0)){
+
+            totalX = maxX - minX;
+
+            pxPerPointX = 800 / totalX;
+            
+            ctx.beginPath();
+
+            ctx.moveTo(5, pxPerPointY * maxY + 5);
+            ctx.lineTo(5, pxPerPointY * maxY + 3 + 5);
+            ctx.lineTo(5, pxPerPointY * maxY - 3 + 5);
+            ctx.moveTo(5, pxPerPointY * maxY + 5);
+            
+
+            var currentX = pxPerPointX + 5;
+            var currentY = pxPerPointY * maxY + 5;
+
+
+            for(i = 0; i < totalX; i++){
+                
+                ctx.lineTo(currentX, currentY);
+                ctx.moveTo(currentX, currentY);
+                ctx.lineTo(currentX, currentY + 3);
+                ctx.lineTo(currentX, currentY - 3);
+                ctx.moveTo(currentX, currentY);
+                
+                currentX += pxPerPointX;
+            }
 
             ctx.stroke();
+
+        }else if((maxY < 0 && minY < 0) || (maxY > 0 && minY > 0)){
+
+            totalY = maxY - minY;
+
+            pxPerPointY = 800 / totalY;
+
+            ctx.beginPath();
+
+            ctx.moveTo(pxPerPointX * Math.abs(minX) + 5, 5);
+            ctx.lineTo(pxPerPointX * Math.abs(minX) + 5 + 3, 5);
+            ctx.lineTo(pxPerPointX * Math.abs(minX) + 5 - 3, 5);
+            ctx.moveTo(pxPerPointX * Math.abs(minX) + 5, 5);
+
+            currentX = pxPerPointX * Math.abs(minX) + 5;
+            currentY = pxPerPointY + 5;
+
+
+            for(i = 0; i < totalY; i++){
+                
+                ctx.lineTo(currentX, currentY);
+                ctx.moveTo(currentX, currentY);
+                ctx.lineTo(currentX + 3, currentY);
+                ctx.lineTo(currentX - 3, currentY);
+                ctx.moveTo(currentX, currentY);
+                
+                currentY += pxPerPointY;
+            }
+
+            ctx.stroke();
+
         }
 
 
