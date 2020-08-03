@@ -4,6 +4,8 @@ refresh();
 document.getElementById("refresh").addEventListener("click", refresh);
 
 function refresh(){
+
+
     // variables
     var canvas = document.getElementById('myCanvas');
     var ctx = canvas.getContext('2d');
@@ -16,14 +18,20 @@ function refresh(){
     var totalX = Math.abs(maxX) + Math.abs(minX);
     var totalY = Math.abs(maxY) + Math.abs(minY);
 
+    var func = document.getElementById("func").value;
+    
+    var pxPerPointX = 800 / totalX;
+    var pxPerPointY = 800 / totalY;
+
+
     axies();
 
+    equ();
 
 
     function axies(){
         
-        var pxPerPointX = 800 / totalX;
-        var pxPerPointY = 800 / totalY;
+        
 
         var i;
 
@@ -140,9 +148,100 @@ function refresh(){
             ctx.stroke();
 
         }
+    }
 
 
+    function equ(){
+
+        func = func.replace(/\s+/g, '');
+
+        func = func.replace("y", '');
+        func = func.replace("Y", '');
+        func = func.replace("=", '');
+
+        // console.log(pxPerPointX);
+
+        var math = mathjs();
+        var express = func;
+
+        var i;
+
+        var currentXValue = minX;
+        var currentYValue = maxY;
+
+        var currentXPx = 5;
+        var currentYPx = 5;
+
+
+        ctx.beginPath();
+
+        // calculate first position
+        var scope = { x: currentXValue };
+        var tree = math.parse(express, scope);
+        var valueY = tree.eval();
+        var k;
+
+        if(valueY > maxY){
+            currentYPx = -1000;
+        }else if(valueY < minY){
+            currentYPx = 1000;
+        }else{
+            for(k = 0; k < totalY; k++){
+                if(valueY < currentYValue){
+                    currentYPx += pxPerPointY;
+                }else{
+                    break;
+                }
+                currentYValue--;
+            }
+    
+        }
         
+        
+
+        ctx.moveTo(currentXPx, currentYPx);
+        console.log(currentXPx);
+        console.log(currentYPx);
+
+        for(i = 0; i < totalX; i++){
+
+            currentXPx += pxPerPointX;
+            currentXValue++;
+
+            scope = { x: currentXValue };
+            tree = math.parse(express, scope);
+            valueY = tree.eval();
+
+            currentYValue = maxY;
+            currentYPx = 5;
+
+            if(valueY > maxY){
+                currentYPx = -1000;
+            }else if(valueY < minY){
+                currentYPx = 1000;
+            }else{
+                for(k = 0; k < totalY; k++){
+                    if(valueY < currentYValue){
+                        currentYPx += pxPerPointY;
+                    }else{
+                        break;
+                    }
+                    currentYValue--;
+                }
+        
+            }
+            
+
+            ctx.lineTo(currentXPx, currentYPx);
+
+
+            console.log('new');
+            console.log(currentXPx);
+            console.log(currentYPx);
+
+        }
+
+        ctx.stroke();
 
     }
 }
