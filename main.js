@@ -159,8 +159,6 @@ function refresh(){
         func = func.replace("Y", '');
         func = func.replace("=", '');
 
-        // console.log(pxPerPointX);
-
         var math = mathjs();
         var express = func;
 
@@ -171,6 +169,8 @@ function refresh(){
 
         var currentXPx = 5;
         var currentYPx = 5;
+
+        var valuePerPxY = 1 / pxPerPointY;
 
 
         ctx.beginPath();
@@ -220,25 +220,22 @@ function refresh(){
             }else if(valueY < minY){
                 currentYPx = 1000;
             }else{
-                for(k = 0; k < totalY; k++){
+                for(k = 0; k < 800; k++){
                     if(valueY < currentYValue){
-                        currentYPx += pxPerPointY;
+                        currentYPx++;
                     }else{
                         break;
                     }
-                    currentYValue--;
+                    currentYValue -= valuePerPxY;
                 }
         
             }
-            
-
             ctx.lineTo(currentXPx, currentYPx);
 
 
-            console.log('new');
-            console.log(currentXPx);
-            console.log(currentYPx);
-
+            // console.log('new');
+            // console.log(currentXPx);
+            // console.log(currentYPx);
         }
 
         ctx.stroke();
