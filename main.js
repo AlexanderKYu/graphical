@@ -171,6 +171,7 @@ function refresh(){
         var currentYPx = 5;
 
         var valuePerPxY = 1 / pxPerPointY;
+        var valuePerPxX = 1/ pxPerPointX;
 
 
         ctx.beginPath();
@@ -203,10 +204,10 @@ function refresh(){
         console.log(currentXPx);
         console.log(currentYPx);
 
-        for(i = 0; i < totalX; i++){
+        for(i = 0; i < 800; i++){
 
-            currentXPx += pxPerPointX;
-            currentXValue++;
+            currentXPx++;
+            currentXValue += valuePerPxX;
 
             scope = { x: currentXValue };
             tree = math.parse(express, scope);
