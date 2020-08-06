@@ -23,12 +23,34 @@
             Enter the function: <input type="text" id="func" value="y = x">
             <button id="refresh" type="button">Refresh</button>
         </div>
-        
+        <div class="graph-containter">
 
-        <div class="graph">
-            <canvas width="810" height="810" id="myCanvas"></canvas>
+            <div class="presets">
+                Presets: <br>
+                <button id="1" type="button"> y = x </button> <br>
+                <button id="2" type="button"> y = x^2 </button> <br>
+                <button id="3" type="button"> y = x^3 </button> <br>
+                <button id="4" type="button"> y = sqrt(x) </button> <br>
+                <button id="5" type="button"> y = abs(x) </button> <br>
+                <button id="6" type="button"> y = 1/x </button> <br>
+                <button id="7" type="button"> y = log(x) </button> <br>
+                <button id="8" type="button"> y = e^x </button> <br>
+                <button id="9" type="button"> y = sin(x) </button> <br>
+                <button id="10" type="button"> y = cos(x) </button> <br>
+                <button id="11" type="button"> y = tan(x) </button> <br>
+
+                
+            </div>
+
+            <div class="graph">
+                <canvas width="810" height="810" id="myCanvas"></canvas>
+            </div>
+            <div class="filler"></div>
+            
 
         </div>
+    
+
         
     </body>
 

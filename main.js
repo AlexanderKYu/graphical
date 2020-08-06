@@ -1,7 +1,120 @@
 
 // start
+
+
 refresh();
 document.getElementById("refresh").addEventListener("click", refresh);
+document.getElementById("1").addEventListener("click", function(){presets1()});
+document.getElementById("2").addEventListener("click", function(){presets2()});
+document.getElementById("3").addEventListener("click", function(){presets3()});
+document.getElementById("4").addEventListener("click", function(){presets4()});
+document.getElementById("5").addEventListener("click", function(){presets5()});
+document.getElementById("6").addEventListener("click", function(){presets6()});
+document.getElementById("7").addEventListener("click", function(){presets7()});
+document.getElementById("8").addEventListener("click", function(){presets8()});
+document.getElementById("9").addEventListener("click", function(){presets9()});
+document.getElementById("10").addEventListener("click", function(){presets10()});
+document.getElementById("11").addEventListener("click", function(){presets11()});
+
+function presets1(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = x";
+    refresh();
+}
+
+function presets2(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = x^2";
+    refresh();
+}
+
+function presets3(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = x^3";
+    refresh();
+}
+
+function presets4(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = sqrt(x)";
+    refresh();
+}
+
+function presets5(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = abs(x)";
+    refresh();
+}
+
+function presets6(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = 1/x";
+    refresh();
+}
+
+function presets7(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = log(x)";
+    refresh();
+}
+
+function presets8(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = e^x";
+    refresh();
+}
+
+function presets9(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = sin(x)";
+    refresh();
+}
+
+function presets10(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = cos(x)";
+    refresh();
+}
+
+function presets11(){
+    document.getElementById("maxX").value = 10;
+    document.getElementById("minX").value = -10;
+    document.getElementById("maxY").value = 10;
+    document.getElementById("minY").value = -10;
+    document.getElementById("func").value = "y = tan(x)";
+    refresh();
+}
+
 
 function refresh(){
 
@@ -19,6 +132,8 @@ function refresh(){
     var totalY = Math.abs(maxY) + Math.abs(minY);
 
     var func = document.getElementById("func").value;
+
+    
     
     var pxPerPointX = 800 / totalX;
     var pxPerPointY = 800 / totalY;
@@ -201,8 +316,8 @@ function refresh(){
         
 
         ctx.moveTo(currentXPx, currentYPx);
-        console.log(currentXPx);
-        console.log(currentYPx);
+        // console.log(currentXPx);
+        // console.log(currentYPx);
 
         for(i = 0; i < 800; i++){
 

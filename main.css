@@ -1,18 +1,41 @@
 .inputs{
-
     line-height: 26pt;
     text-align: center;
     font-size: large;
-
     margin: 15px;
 }
 
-.graph{
-    margin: auto;
-    text-align: center;
+.graph-containter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
+.graph{
+    
     border-style: solid;
     border-radius: 15px;
     width: 810px;
     height: 810px;
+    order: 2;
+}
+
+.presets{
+    
+    margin: auto;
+    line-height: 40pt;
+    padding: 20px;
+    font-size: 30px;
+    order: 1;
+    flex: 1;
+    
+}
+.presets > button{
+    padding: 5px;
+}
+
+.filler{
+    order: 3;
+    flex: 1;
+
 }
