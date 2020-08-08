@@ -7,6 +7,11 @@
         <link rel="stylesheet" type = "text/css" href="main.css">
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/0.15.0/math.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
         
         <title>
             Calculator
@@ -45,7 +50,18 @@
             <div class="graph">
                 <canvas width="810" height="810" id="myCanvas"></canvas>
             </div>
-            <div class="filler"></div>
+
+
+            <div class="block-3">
+                Integrator: <br>
+                Upper bound: <input type="text" id="top" value="10"> <br>
+                Lower bound: <input type="text" id="low" value="-10"><br>
+                Answer: <input type="text" id="ans">
+                <button id="integrate" type="button">Integrate</button><br>
+                <br>
+                <br>
+                Find X-Intercepts: <br><input type="text" id="xfind"> <button id="x-inter">Find</button>
+            </div>
             
 
         </div>

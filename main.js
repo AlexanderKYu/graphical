@@ -15,6 +15,9 @@ document.getElementById("8").addEventListener("click", function(){presets8()});
 document.getElementById("9").addEventListener("click", function(){presets9()});
 document.getElementById("10").addEventListener("click", function(){presets10()});
 document.getElementById("11").addEventListener("click", function(){presets11()});
+document.getElementById("integrate").addEventListener("click", function(){integration()});
+document.getElementById("integrate").addEventListener("click", function(){integration()});
+document.getElementById("x-inter").addEventListener("click", function(){xFinder()});
 
 function presets1(){
     document.getElementById("maxX").value = 10;
@@ -295,6 +298,7 @@ function refresh(){
         var scope = { x: currentXValue };
         var tree = math.parse(express, scope);
         var valueY = tree.eval();
+        // console.log(typeof valueY);
         var k;
 
         if(valueY > maxY){
@@ -357,6 +361,44 @@ function refresh(){
         ctx.stroke();
 
     }
+    
+}
+
+function integration(){
+
+    var upper = parseInt(document.getElementById("top").value, 10);
+    var lower = parseInt(document.getElementById("low").value, 10);
+
+    var func = document.getElementById("func").value;
+
+    func = func.replace(/\s+/g, '');
+
+    func = func.replace("y", '');
+    func = func.replace("Y", '');
+    func = func.replace("=", '');
+
+    var inte = nerdamer('defint(' + func + ', '+ lower + ', ' + upper + ')');
+
+    document.getElementById("ans").value = inte.text();
+
+}
+
+function xFinder(){
+
+    var func = document.getElementById("func").value;
+
+    func = func.replace(/\s+/g, '');
+
+    func = func.replace("y", '');
+    func = func.replace("Y", '');
+    func = func.replace("=", '');
+
+    var Xs = nerdamer.solve('0 = ' + func, 'x');
+    var ans = Xs.toString();
+    ans = ans.slice(1, -1);
+
+    document.getElementById("xfind").value = ans;
+
 }
 
 
