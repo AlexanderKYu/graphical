@@ -37,11 +37,33 @@
 }
 
 .block-3{
-
+    
     line-height: 26px;
     padding: 20px;
     font-size: large;
     order: 3;
     flex: 1;
 
+}
+
+.calculator{
+    width: 370px;
+    height: 545px;
+    border-radius: 15px;
+    border: solid;
+}
+
+.calculator output{
+    display: block;
+    width: 350px;
+    height: 200px;
+    margin: auto;
+    margin-top: 5px;
+    border: solid;
+    border-radius: 10px;
+
+}
+
+.calculatorButtons{
+    display: flex;
 }
