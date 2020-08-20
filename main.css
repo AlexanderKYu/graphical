@@ -47,27 +47,112 @@
 }
 
 .calculator{
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     width: 370px;
     height: 545px;
     border-radius: 15px;
     border: solid;
+    
 }
 
-.calculator output{
-    display: block;
+.calculatorScreen{
+    
+    border-bottom: solid;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.rows{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rows button{
+    font-size: 20px;
+    padding: 15px;
+}
+
+.row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.row3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.row4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.Equal button{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* .calculator output{
+
     width: 350px;
     height: 200px;
     margin: auto;
     margin-top: 5px;
     border: solid;
     border-radius: 10px;
+    background: grey;
+    flex: 1;
 
 }
 
 .calculatorButtons{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     
+    background: green;
+    flex: 2;
 }
+
+.calculatorButtons button{
+    
+    font-size: 20px;
+    padding: 10px;
+    
+} */
+
+/* .row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.row3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.row4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+} */

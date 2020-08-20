@@ -16,8 +16,35 @@ document.getElementById("9").addEventListener("click", function(){presets9()});
 document.getElementById("10").addEventListener("click", function(){presets10()});
 document.getElementById("11").addEventListener("click", function(){presets11()});
 document.getElementById("integrate").addEventListener("click", function(){integration()});
-document.getElementById("integrate").addEventListener("click", function(){integration()});
 document.getElementById("x-inter").addEventListener("click", function(){xFinder()});
+
+
+
+document.getElementById("calc7").addEventListener("click", function(){seven()});
+document.getElementById("calc8").addEventListener("click", function(){eight()});
+document.getElementById("calc9").addEventListener("click", function(){nine()});
+document.getElementById("calcOpen").addEventListener("click", function(){openBracket()});
+document.getElementById("calcClose").addEventListener("click", function(){closeBracket()});
+
+document.getElementById("calc4").addEventListener("click", function(){four()});
+document.getElementById("calc5").addEventListener("click", function(){five()});
+document.getElementById("calc6").addEventListener("click", function(){six()});
+document.getElementById("calcMul").addEventListener("click", function(){multiplication()});
+document.getElementById("calcDiv").addEventListener("click", function(){division()});
+
+document.getElementById("calc1").addEventListener("click", function(){one()});
+document.getElementById("calc2").addEventListener("click", function(){two()});
+document.getElementById("calc3").addEventListener("click", function(){three()});
+document.getElementById("calc+").addEventListener("click", function(){addition()});
+document.getElementById("calc-").addEventListener("click", function(){subtration()});
+
+document.getElementById("calc0").addEventListener("click", function(){zero()});
+document.getElementById("calc.").addEventListener("click", function(){decimal()});
+document.getElementById("calc+/-").addEventListener("click", function(){negation()});
+document.getElementById("calc=").addEventListener("click", function(){equal()});
+
+
+
 
 function presets1(){
     document.getElementById("maxX").value = 10;
@@ -402,3 +429,229 @@ function xFinder(){
 }
 
 
+// default 40 chars
+// maximum of 400 chars
+
+
+function zero(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "0";
+    }else{
+        saved += "\n0";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+
+function one(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += '1';
+    }else{
+        saved += "\n1";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function two(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "2";
+    }else{
+        saved += "\n2";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function three(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "3";
+    }else{
+        saved += "\n3";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function four(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "4";
+    }else{
+        saved += "\n4";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function five(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "5";
+    }else{
+        saved += "\n5";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function six(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "6";
+    }else{
+        saved += "\n6";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function seven(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "7";
+    }else{
+        saved += "\n7";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function eight(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "8";
+    }else{
+        saved += "\n8";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function nine(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "9";
+    }else{
+        saved += "\n9";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function decimal(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += ".";
+    }else{
+        saved += "\n.";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function negation(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "-";
+    }else{
+        saved += "\n-";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function openBracket(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "(";
+    }else{
+        saved += "\n(";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function closeBracket(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += ")";
+    }else{
+        saved += "\n)";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function multiplication(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "x";
+    }else{
+        saved += "\nx";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function division(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "/";
+    }else{
+        saved += "\n/";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function addition(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "+";
+    }else{
+        saved += "\n+";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function subtration(){
+    var saved = document.getElementById("screen").value;
+
+    if((saved.length % 40) != 0){
+        saved += "-";
+    }else{
+        saved += "\n-";
+    }
+    
+    document.getElementById("screen").value = saved;
+}
+
+function equal(){
+
+    var saved = document.getElementById("screen").value;
+    console.log("checking for answer to " + saved);
+}
