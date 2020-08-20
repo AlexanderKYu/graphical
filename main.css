@@ -47,6 +47,7 @@
 }
 
 .calculator{
+    /* display: flex; */
     width: 370px;
     height: 545px;
     border-radius: 15px;
@@ -66,4 +67,7 @@
 
 .calculatorButtons{
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    
 }
