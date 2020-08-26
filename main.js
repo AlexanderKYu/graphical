@@ -433,13 +433,15 @@ function xFinder(){
 // maximum of 400 chars
 
 
+var question = "";
+
 function zero(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "0";
     }else{
-        saved += "\n0";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -449,10 +451,10 @@ function zero(){
 function one(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
-        saved += '1';
+    if(saved.length < 13){
+        saved += "1";
     }else{
-        saved += "\n1";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -461,10 +463,10 @@ function one(){
 function two(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "2";
     }else{
-        saved += "\n2";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -473,10 +475,10 @@ function two(){
 function three(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "3";
     }else{
-        saved += "\n3";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -485,10 +487,10 @@ function three(){
 function four(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "4";
     }else{
-        saved += "\n4";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -497,10 +499,10 @@ function four(){
 function five(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "5";
     }else{
-        saved += "\n5";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -509,10 +511,10 @@ function five(){
 function six(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "6";
     }else{
-        saved += "\n6";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -521,10 +523,10 @@ function six(){
 function seven(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "7";
     }else{
-        saved += "\n7";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -533,10 +535,10 @@ function seven(){
 function eight(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "8";
     }else{
-        saved += "\n8";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -545,10 +547,10 @@ function eight(){
 function nine(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "9";
     }else{
-        saved += "\n9";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -557,10 +559,10 @@ function nine(){
 function decimal(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += ".";
     }else{
-        saved += "\n.";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -569,10 +571,10 @@ function decimal(){
 function negation(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "-";
     }else{
-        saved += "\n-";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -581,10 +583,10 @@ function negation(){
 function openBracket(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += "(";
     }else{
-        saved += "\n(";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
@@ -593,65 +595,81 @@ function openBracket(){
 function closeBracket(){
     var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
+    if(saved.length < 13){
         saved += ")";
     }else{
-        saved += "\n)";
+        alert("Buffer full");
     }
     
     document.getElementById("screen").value = saved;
 }
 
 function multiplication(){
-    var saved = document.getElementById("screen").value;
+    // var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
-        saved += "x";
-    }else{
-        saved += "\nx";
-    }
+    // if(saved.length < 13){
+    //     saved += "x";
+    // }else{
+    //     saved += "\nx";
+    // }
     
-    document.getElementById("screen").value = saved;
+    // document.getElementById("screen").value = saved;
 }
 
 function division(){
-    var saved = document.getElementById("screen").value;
+    // var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
-        saved += "/";
-    }else{
-        saved += "\n/";
-    }
+    // if(saved.length < 13){
+    //     saved += "/";
+    // }else{
+    //     saved += "\n/";
+    // }
     
-    document.getElementById("screen").value = saved;
+    // document.getElementById("screen").value = saved;
 }
 
 function addition(){
-    var saved = document.getElementById("screen").value;
+    // var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
-        saved += "+";
-    }else{
-        saved += "\n+";
-    }
+    // if(saved.length < 13){
+    //     saved += "+";
+    // }else{
+    //     saved += "\n+";
+    // }
     
-    document.getElementById("screen").value = saved;
+    // document.getElementById("screen").value = saved;
 }
 
 function subtration(){
-    var saved = document.getElementById("screen").value;
+    // var saved = document.getElementById("screen").value;
 
-    if((saved.length % 40) != 0){
-        saved += "-";
-    }else{
-        saved += "\n-";
-    }
+    // if(saved.length < 13){
+    //     saved += "-";
+    // }else{
+    //     saved += "\n-";
+    // }
     
-    document.getElementById("screen").value = saved;
+    // document.getElementById("screen").value = saved;
 }
 
 function equal(){
 
-    var saved = document.getElementById("screen").value;
-    console.log("checking for answer to " + saved);
+    // var saved = document.getElementById("screen").value;
+
+    // var fill = 44 - (saved.length - 1);
+
+    // while(fill <= 0){
+    //     fill += 44;
+    // }
+
+    // var math = mathjs();
+
+    // var express = saved;
+    // var tree = math.parse(express);
+    // var answer = tree.eval();
+
+    // saved += " = " + answer + "\n";
+    // document.getElementById("screen").value = saved;
+
+    // console.log("checking for answer to " + saved);
 }
