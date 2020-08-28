@@ -42,6 +42,7 @@ document.getElementById("calc0").addEventListener("click", function(){zero()});
 document.getElementById("calc.").addEventListener("click", function(){decimal()});
 document.getElementById("calc+/-").addEventListener("click", function(){negation()});
 document.getElementById("calc=").addEventListener("click", function(){equal()});
+document.getElementById("clear").addEventListener("click", function(){clearCalc()});
 
 
 
@@ -429,17 +430,14 @@ function xFinder(){
 }
 
 
-// default 40 chars
-// maximum of 400 chars
-
-
 var question = "";
 
 function zero(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "0";
+        question += "0";
     }else{
         alert("Buffer full");
     }
@@ -451,8 +449,9 @@ function zero(){
 function one(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "1";
+        question += "1";
     }else{
         alert("Buffer full");
     }
@@ -463,8 +462,9 @@ function one(){
 function two(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "2";
+        question += "2";
     }else{
         alert("Buffer full");
     }
@@ -475,8 +475,9 @@ function two(){
 function three(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "3";
+        question += "3";
     }else{
         alert("Buffer full");
     }
@@ -487,8 +488,9 @@ function three(){
 function four(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "4";
+        question += "4";
     }else{
         alert("Buffer full");
     }
@@ -499,8 +501,9 @@ function four(){
 function five(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "5";
+        question += "5";
     }else{
         alert("Buffer full");
     }
@@ -511,8 +514,9 @@ function five(){
 function six(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "6";
+        question += "6";
     }else{
         alert("Buffer full");
     }
@@ -523,8 +527,9 @@ function six(){
 function seven(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "7";
+        question += "7";
     }else{
         alert("Buffer full");
     }
@@ -535,8 +540,9 @@ function seven(){
 function eight(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "8";
+        question += "8";
     }else{
         alert("Buffer full");
     }
@@ -547,8 +553,9 @@ function eight(){
 function nine(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "9";
+        question += "9";
     }else{
         alert("Buffer full");
     }
@@ -559,8 +566,9 @@ function nine(){
 function decimal(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += ".";
+        question += ".";
     }else{
         alert("Buffer full");
     }
@@ -571,8 +579,9 @@ function decimal(){
 function negation(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "-";
+        question += "-";
     }else{
         alert("Buffer full");
     }
@@ -583,8 +592,9 @@ function negation(){
 function openBracket(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += "(";
+        question += "(";
     }else{
         alert("Buffer full");
     }
@@ -595,8 +605,9 @@ function openBracket(){
 function closeBracket(){
     var saved = document.getElementById("screen").value;
 
-    if(saved.length < 13){
+    if(saved.length < 12){
         saved += ")";
+        question += ")";
     }else{
         alert("Buffer full");
     }
@@ -605,71 +616,67 @@ function closeBracket(){
 }
 
 function multiplication(){
-    // var saved = document.getElementById("screen").value;
-
-    // if(saved.length < 13){
-    //     saved += "x";
-    // }else{
-    //     saved += "\nx";
-    // }
     
-    // document.getElementById("screen").value = saved;
+    document.getElementById("screen").value = "";
+
+    question += "*";
 }
 
 function division(){
-    // var saved = document.getElementById("screen").value;
+    document.getElementById("screen").value = "";
 
-    // if(saved.length < 13){
-    //     saved += "/";
-    // }else{
-    //     saved += "\n/";
-    // }
-    
-    // document.getElementById("screen").value = saved;
+    question += "/";
 }
 
 function addition(){
-    // var saved = document.getElementById("screen").value;
+    document.getElementById("screen").value = "";
 
-    // if(saved.length < 13){
-    //     saved += "+";
-    // }else{
-    //     saved += "\n+";
-    // }
-    
-    // document.getElementById("screen").value = saved;
+    question += "+";
 }
 
 function subtration(){
-    // var saved = document.getElementById("screen").value;
+    document.getElementById("screen").value = "";
 
-    // if(saved.length < 13){
-    //     saved += "-";
-    // }else{
-    //     saved += "\n-";
-    // }
-    
-    // document.getElementById("screen").value = saved;
+    question += "-";
 }
 
 function equal(){
 
-    // var saved = document.getElementById("screen").value;
+    document.getElementById("screen").value = "";
 
-    // var fill = 44 - (saved.length - 1);
+    var math = mathjs();
 
-    // while(fill <= 0){
-    //     fill += 44;
-    // }
+    var express = question;
+    var tree = math.parse(express);
+    var answer = tree.eval();
 
-    // var math = mathjs();
 
-    // var express = saved;
-    // var tree = math.parse(express);
-    // var answer = tree.eval();
+    // trick to convert answer to string
+    var answerString = answer + "";
 
-    // saved += " = " + answer + "\n";
-    // document.getElementById("screen").value = saved;
+    if(answerString.length > 12){
 
-    // console.log("checking for answer to " + saved);
+        var indexOfDecimal = answerString.indexOf(".");
+
+        if(indexOfDecimal != -1){
+            var characterPos = indexOfDecimal + 1;
+            var spacesLeft = 12 - characterPos;
+            answer = answer.toFixed(spacesLeft);
+        }
+        // answer = answer.slice(0,12);
+    }
+
+
+    document.getElementById("screen").value = answer;
+
+    // reset global question
+
+    question = "";
+}
+
+function clearCalc(){
+    
+    question = "";
+
+    document.getElementById("screen").value = "";
 }
