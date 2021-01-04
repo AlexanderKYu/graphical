@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link rel="stylesheet" type = "text/css" href="main.css">
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/0.15.0/math.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
+        
+        <title>
+            Calculator
+        </title>
+    </head>
+
+    <body>
+        <div class="inputs">
+            Enter the scope of the grid <br>
+            Maximum X value: <input type="text" id="maxX" value="10">
+            Minimum X value: <input type="text" id="minX" value="-10">
+            Maximun Y value: <input type="text" id="maxY" value="10">
+            Minimun Y value: <input type="text" id="minY" value="-10"> <br>
+            Enter the function: <input type="text" id="func" value="y = x">
+            <button id="refresh" type="button">Refresh</button>
+        </div>
+        <div class="graph-containter">
+
+            <div class="presets">
+                Presets: <br>
+                <button id="1" type="button"> y = x </button> <br>
+                <button id="2" type="button"> y = x^2 </button> <br>
+                <button id="3" type="button"> y = x^3 </button> <br>
+                <button id="4" type="button"> y = sqrt(x) </button> <br>
+                <button id="5" type="button"> y = abs(x) </button> <br>
+                <button id="6" type="button"> y = 1/x </button> <br>
+                <button id="7" type="button"> y = log(x) </button> <br>
+                <button id="8" type="button"> y = e^x </button> <br>
+                <button id="9" type="button"> y = sin(x) </button> <br>
+                <button id="10" type="button"> y = cos(x) </button> <br>
+                <button id="11" type="button"> y = tan(x) </button> <br>
+
+                
+            </div>
+
+            <div class="graph">
+                <canvas width="810" height="810" id="myCanvas"></canvas>
+            </div>
+
+
+            <div class="block-3">
+                <div class="integrator">
+                    Integrator: <br>
+                    Upper bound: <input type="text" id="top" value="10"> <br>
+                    Lower bound: <input type="text" id="low" value="-10"><br>
+                    Answer: <output id="ans"></output>
+                    <br>
+                    <button id="integrate" type="button">Integrate</button>
+                    <br>
+                    <br>
+                </div>
+
+                <div class="xinter">
+                    Find X-Intercepts:<output id="xfind"></output>
+                    <br>
+                    <button id="x-inter">Find</button>
+                    <br>
+                    <br>
+                </div>
+       
+                <div class="calculator">
+                    <div class="calculatorScreen">
+                        <output id="screen"></output>
+                    </div>
+
+                    <div class="rows">
+                        <div class="row1">
+                            <div class="Seven">
+                                <button id="calc7">7</button>
+                            </div>
+
+                            <div class="Eight">
+                                <button id="calc8">8</button>
+                            </div>
+
+                            <div class="Nine">
+                                <button id="calc9">9</button>
+                            </div>
+
+                            <div class="OpenBrac">
+                                <button id="calcOpen">(</button>
+                            </div>
+                            
+                            <div class="CloseBrac">
+                                <button id="calcClose">)</button>
+                            </div>
+
+                        </div>
+    
+                        <div class="row2">
+                            <div class="Four">
+                                <button id="calc4">4</button>
+                            </div>
+
+                            <div class="Five">
+                                <button id="calc5">5</button>
+                            </div>
+                            
+                            <div class="Six">
+                                <button id="calc6">6</button>
+                            </div>
+
+                            <div class="Mul">
+                                <button id="calcMul">x</button>
+                            </div>
+                            
+                            <div class="Div">
+                                <button id="calcDiv">/</button>
+                            </div>
+                            
+                        </div>
+    
+                        <div class="row3">
+                            <div class="One">
+                                <button id="calc1">1</button>
+                            </div>
+                            
+                            <div class="Two">
+                                <button id="calc2">2</button>
+                            </div>
+
+                            <div class="Three">
+                                <button id="calc3">3</button>
+                            </div>
+                            
+                            <div class="Add">
+                                <button id="calc+">+</button>
+                            </div>
+
+                            <div class="Min">
+                                <button id="calc-">-</button>
+                            </div>
+                    
+                        </div>
+    
+                        <div class="row4">
+                            <div class="Zero">
+                                <button id="calc0">0</button>
+                            </div>
+                            
+                            <div class="Dec">
+                                <button id="calc.">.</button>
+                            </div>
+                            
+                            <div class="Neg">
+                                <button id="calc+/-">+/-</button>
+                            </div>
+
+                            <div class="Equal">
+                                <button id="calc=">=</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    <!-- <div class="calculatorButtons">
+                        
+
+                        <button id="7">7</button>
+                        <button id="8">8</button>
+                        <button id="9">9</button>
+                        <button id="(">(</button>
+                        <button id=")">)</button>
+                        <br>
+                        <button id="4">4</button>
+                        <button id="5">5</button>
+                        <button id="6">6</button>
+                        <button id="x">x</button>
+                        <button id="/">/</button>
+                        <br>
+                        <button id="1">1</button>
+                        <button id="2">2</button>
+                        <button id="3">3</button>
+                        <button id="+">+</button>
+                        <button id="-">-</button>
+                        <br>
+                        <button id="0">0</button>
+                        <button id=".">.</button>
+                        <button id="+/-">+/-</button>
+                        <button id="=">=</button>
+
+      
+                    </div> -->
+                    
+                    
+
+                </div>
+
+                <button id="clear">Clear Calculator</button>
+            </div>
+            
+
+        </div>
+    
+
+        
+    </body>
+
+    <script src = "./main.js"></script>
+</html>
+
